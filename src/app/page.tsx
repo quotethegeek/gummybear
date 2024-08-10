@@ -86,7 +86,7 @@ export default function Home() {
         >
           <div className="flex flex-col justify-between h-full w-full">
             <div className="flex flex-col mt-auto mb-auto items-justify text-sm p-8">
-              <p className="mb-4">Hi, we're Billy & Raven, and we made a baby!</p>
+              <p className="mb-4">Hi, we're Billy &amp; Raven, and we made a baby!</p>
               <Image
                 src={babyPic}
                 alt="Picture of baby gummy bear fetus"
