@@ -2,20 +2,26 @@
 
 import Image from "next/image";
 import babyPic from './assets/baby.jpg'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BabyModal from "./components/BabyModal";
 
 export default function Home() {
   const [babyModalOpen, setBabyModalOpen] = useState(false);
+  const [percent, setPercent] = useState<number>(0);
 
-  // Get today's % completion of pregenancy
-  const today: any = new Date(),
-        start: any = new Date(2024, 4, 2),
-        end: any = new Date(2025, 1, 6);
-  const is = Math.abs(today - start);
-  const of = Math.abs(end - start);
-  const percent = Math.round((is/of)*100);
-  
+  // Get today's % completion of pregnancy
+  useEffect(() => {
+    const calculate = () => {      
+      const today: any = new Date(),
+            start: any = new Date(2024, 4, 2),
+            end: any = new Date(2025, 1, 6);
+      const is = Math.abs(today - start);
+      const of = Math.abs(end - start);
+      const percent = Math.round((is/of)*100);
+      setPercent(percent);
+    }
+    calculate();
+  }, []);
   
   return (
     <main className="flex min-h-screen flex-col items-center justify-around p-16 lg:p-36">
