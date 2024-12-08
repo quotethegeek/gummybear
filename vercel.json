@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+        { "source": "/lorelei/:asset*", "destination": "https://lorelei.ravenp.ink*" },
+        { "source": "/(.*)", "destination": "/" }
+    ]
+}
